@@ -106,8 +106,8 @@ const Index = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-              ДЕКОР PRO
+            <h1 className="text-2xl md:text-3xl font-bold text-primary">
+              Сделай красиво!
             </h1>
             <div className="hidden md:flex gap-6">
               {['home', 'services', 'about', 'price', 'reviews', 'contact'].map((section) => (
@@ -134,83 +134,47 @@ const Index = () => {
         </div>
       </nav>
 
-      <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-20">
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
-          <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
-        </div>
-
+      <section id="home" className="relative min-h-screen flex items-center pt-20">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 animate-slide-in-left">
-              <h2 className="text-5xl md:text-7xl font-bold leading-tight">
-                Визуальная
-                <span className="block bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-                  магия
-                </span>
-                для бизнеса
-              </h2>
-              <p className="text-xl text-muted-foreground">
-                Превращаем обычные витрины в произведения искусства. Увеличиваем поток клиентов через эмоциональное оформление.
-              </p>
-              <div className="flex gap-4">
-                <Button size="lg" onClick={() => scrollToSection('contact')} className="text-lg">
-                  Начать проект
-                  <Icon name="ArrowRight" className="ml-2" size={20} />
-                </Button>
-                <Button size="lg" variant="outline" onClick={() => scrollToSection('services')}>
-                  Наши услуги
-                </Button>
-              </div>
-            </div>
-
-            <div className="relative animate-scale-in">
-              <div className="relative aspect-square">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-[3rem] rotate-6 opacity-20" />
-                <div className="absolute inset-0 bg-gradient-to-tr from-secondary to-accent rounded-[3rem] -rotate-6 opacity-20" />
-                <div className="relative bg-card rounded-[3rem] p-8 shadow-2xl border border-border">
-                  <div className="grid grid-cols-2 gap-4">
-                    {holidays.slice(0, 4).map((holiday, idx) => (
-                      <div
-                        key={holiday.id}
-                        className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-6 hover:scale-105 transition-transform"
-                        style={{ animationDelay: `${idx * 0.1}s` }}
-                      >
-                        <Icon name={holiday.icon as any} size={40} className="text-primary mb-3" />
-                        <p className="font-semibold text-sm">{holiday.name}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <h2 className="text-6xl md:text-8xl font-bold leading-tight text-foreground">
+              Визуальная магия
+              <span className="block text-primary mt-2">для бизнеса</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
+              Превращаем витрины в произведения искусства
+            </p>
+            <div className="flex gap-4 justify-center pt-4">
+              <Button size="lg" onClick={() => scrollToSection('contact')}>
+                Начать проект
+              </Button>
+              <Button size="lg" variant="outline" onClick={() => scrollToSection('services')}>
+                Услуги
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="services" className="py-24 bg-muted/30">
+      <section id="services" className="py-32">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Наши услуги</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Комплексные решения для создания незабываемого визуального опыта
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">Услуги</h2>
+            <p className="text-xl text-muted-foreground max-w-xl mx-auto">
+              Комплексные решения для вашего бизнеса
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {services.map((service, idx) => (
               <Card
                 key={idx}
-                className="group hover:shadow-xl transition-all hover:-translate-y-2 animate-fade-in border-2"
-                style={{ animationDelay: `${idx * 0.1}s` }}
+                className="group hover:border-primary transition-all p-8"
               >
-                <CardHeader>
-                  <div className={`w-16 h-16 ${service.color} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                    <Icon name={service.icon as any} size={32} className="text-white" />
-                  </div>
-                  <CardTitle>{service.title}</CardTitle>
-                  <CardDescription>{service.description}</CardDescription>
+                <CardHeader className="p-0">
+                  <Icon name={service.icon as any} size={32} className="text-primary mb-4" />
+                  <CardTitle className="text-2xl mb-3">{service.title}</CardTitle>
+                  <CardDescription className="text-base">{service.description}</CardDescription>
                 </CardHeader>
               </Card>
             ))}
@@ -218,93 +182,73 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="about" className="py-24">
+      <section id="about" className="py-32">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="animate-slide-in-left">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">О компании</h2>
-              <div className="space-y-4 text-lg text-muted-foreground">
-                <p>
-                  Мы — команда креативных дизайнеров и мастеров декора с более чем 10-летним опытом работы в индустрии визуального оформления.
-                </p>
-                <p>
-                  Наша миссия — делать бизнес наших клиентов заметнее через эмоциональное и атмосферное оформление пространств. Каждый проект — это уникальная история, рассказанная через декор.
-                </p>
-                <div className="grid grid-cols-3 gap-6 pt-6">
-                  <div>
-                    <div className="text-4xl font-bold text-primary mb-2">500+</div>
-                    <div className="text-sm">Проектов</div>
-                  </div>
-                  <div>
-                    <div className="text-4xl font-bold text-secondary mb-2">10</div>
-                    <div className="text-sm">Лет опыта</div>
-                  </div>
-                  <div>
-                    <div className="text-4xl font-bold text-accent mb-2">98%</div>
-                    <div className="text-sm">Довольных клиентов</div>
-                  </div>
-                </div>
-              </div>
+          <div className="max-w-3xl mx-auto text-center space-y-8">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">О компании</h2>
+            <div className="space-y-6 text-lg text-muted-foreground">
+              <p>
+                Мы — команда креативных дизайнеров и мастеров декора с более чем 10-летним опытом работы.
+              </p>
+              <p>
+                Наша миссия — делать бизнес заметнее через эмоциональное оформление пространств.
+              </p>
             </div>
-
-            <div className="relative animate-slide-in-right">
-              <div className="aspect-[4/3] bg-gradient-to-br from-primary via-secondary to-accent rounded-[3rem] opacity-20 absolute inset-0 rotate-3" />
-              <div className="aspect-[4/3] bg-card rounded-[3rem] relative overflow-hidden border-2 border-border shadow-2xl">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Icon name="Award" size={120} className="text-primary/20" />
-                </div>
+            <div className="grid grid-cols-3 gap-8 pt-8">
+              <div>
+                <div className="text-5xl font-bold text-primary mb-2">500+</div>
+                <div className="text-sm text-muted-foreground">Проектов</div>
+              </div>
+              <div>
+                <div className="text-5xl font-bold text-primary mb-2">10</div>
+                <div className="text-sm text-muted-foreground">Лет опыта</div>
+              </div>
+              <div>
+                <div className="text-5xl font-bold text-primary mb-2">98%</div>
+                <div className="text-sm text-muted-foreground">Довольных клиентов</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="price" className="py-24 bg-muted/30">
+      <section id="price" className="py-32">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Прайс-лист</h2>
-            <p className="text-xl text-muted-foreground">Прозрачные цены на наши услуги</p>
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">Прайс</h2>
+            <p className="text-xl text-muted-foreground">Прозрачные цены</p>
           </div>
 
-          <Card className="max-w-3xl mx-auto animate-scale-in">
-            <CardContent className="p-0">
-              {prices.map((item, idx) => (
-                <div
-                  key={idx}
-                  className={`flex justify-between items-center p-6 ${
-                    idx !== prices.length - 1 ? 'border-b' : ''
-                  } hover:bg-muted/50 transition-colors`}
-                >
-                  <div className="font-medium">{item.service}</div>
-                  <div className="text-xl font-bold text-primary">{item.price}</div>
-                </div>
-              ))}
-            </CardContent>
-          </Card>
+          <div className="max-w-3xl mx-auto space-y-4">
+            {prices.map((item, idx) => (
+              <div
+                key={idx}
+                className="flex justify-between items-center p-8 border border-border hover:border-primary transition-all rounded-lg"
+              >
+                <div className="text-lg">{item.service}</div>
+                <div className="text-2xl font-bold text-primary">{item.price}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section id="reviews" className="py-24">
+      <section id="reviews" className="py-32 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Отзывы клиентов</h2>
-            <p className="text-xl text-muted-foreground">Что говорят о нас</p>
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">Отзывы</h2>
+            <p className="text-xl text-muted-foreground">Что говорят клиенты</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {reviews.map((review, idx) => (
-              <Card key={idx} className="animate-fade-in" style={{ animationDelay: `${idx * 0.1}s` }}>
-                <CardHeader>
-                  <div className="flex items-center gap-1 mb-2">
-                    {[...Array(review.rating)].map((_, i) => (
-                      <Icon key={i} name="Star" size={20} className="text-accent fill-accent" />
-                    ))}
+              <Card key={idx} className="p-6">
+                <CardContent className="p-0 space-y-4">
+                  <p className="text-muted-foreground">"{review.text}"</p>
+                  <div>
+                    <div className="font-semibold">{review.name}</div>
+                    <div className="text-sm text-muted-foreground">{review.business}</div>
                   </div>
-                  <CardTitle className="text-lg">{review.name}</CardTitle>
-                  <CardDescription>{review.business}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground italic">"{review.text}"</p>
                 </CardContent>
               </Card>
             ))}
@@ -312,15 +256,15 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="contact" className="py-24 bg-muted/30">
+      <section id="contact" className="py-32">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12 animate-fade-in">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">Заказать декор</h2>
-              <p className="text-xl text-muted-foreground">Заполните форму, и мы свяжемся с вами в течение часа</p>
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl md:text-6xl font-bold mb-6">Контакты</h2>
+              <p className="text-xl text-muted-foreground">Свяжемся в течение часа</p>
             </div>
 
-            <Card className="animate-scale-in">
+            <Card>
               <CardContent className="p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
@@ -398,85 +342,38 @@ const Index = () => {
                     />
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full text-lg">
+                  <Button type="submit" size="lg" className="w-full">
                     Отправить заявку
-                    <Icon name="Send" className="ml-2" size={20} />
                   </Button>
                 </form>
               </CardContent>
             </Card>
 
-            <div className="mt-12 grid md:grid-cols-3 gap-6">
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <Icon name="Phone" size={32} className="text-primary mx-auto mb-3" />
-                  <div className="font-semibold mb-1">Телефон</div>
-                  <div className="text-muted-foreground">+7 (999) 123-45-67</div>
-                </CardContent>
-              </Card>
-
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <Icon name="Mail" size={32} className="text-primary mx-auto mb-3" />
-                  <div className="font-semibold mb-1">Email</div>
-                  <div className="text-muted-foreground">info@decorpro.ru</div>
-                </CardContent>
-              </Card>
-
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <Icon name="MapPin" size={32} className="text-primary mx-auto mb-3" />
-                  <div className="font-semibold mb-1">Адрес</div>
-                  <div className="text-muted-foreground">Москва, ул. Примерная, 1</div>
-                </CardContent>
-              </Card>
+            <div className="mt-16 space-y-6 text-center">
+              <div className="space-y-2">
+                <div className="text-sm text-muted-foreground">Телефон</div>
+                <div className="text-lg">+7 (999) 123-45-67</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-sm text-muted-foreground">Email</div>
+                <div className="text-lg">info@decorpro.ru</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-sm text-muted-foreground">Адрес</div>
+                <div className="text-lg">Москва, ул. Примерная, 1</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <footer className="bg-card border-t py-12">
+      <footer className="border-t py-16">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mb-4">
-                ДЕКОР PRO
-              </h3>
-              <p className="text-muted-foreground">Визуальная магия для вашего бизнеса</p>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4">Услуги</h4>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>Декор витрин</li>
-                <li>Сезонное оформление</li>
-                <li>Корпоративный стиль</li>
-                <li>Монтаж и демонтаж</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4">Компания</h4>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>О нас</li>
-                <li>Портфолио</li>
-                <li>Отзывы</li>
-                <li>Контакты</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4">Соцсети</h4>
-              <div className="flex gap-4">
-                <Icon name="Instagram" size={24} className="text-muted-foreground hover:text-primary transition-colors cursor-pointer" />
-                <Icon name="Facebook" size={24} className="text-muted-foreground hover:text-primary transition-colors cursor-pointer" />
-                <Icon name="Twitter" size={24} className="text-muted-foreground hover:text-primary transition-colors cursor-pointer" />
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t mt-8 pt-8 text-center text-muted-foreground">
-            <p>&copy; 2024 ДЕКОР PRO. Все права защищены.</p>
+          <div className="text-center space-y-4">
+            <h3 className="text-2xl font-bold text-primary">
+              Сделай красиво!
+            </h3>
+            <p className="text-muted-foreground">&copy; 2024 Все права защищены</p>
           </div>
         </div>
       </footer>
