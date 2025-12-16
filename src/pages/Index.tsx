@@ -128,7 +128,7 @@ const Index = () => {
                 >
                   {section === 'home' && 'Главная'}
                   {section === 'services' && 'Услуги'}
-                  {section === 'about' && 'О компании'}
+                  {section === 'about' && 'О нас'}
                   {section === 'price' && 'Цены'}
                   {section === 'reviews' && 'Отзывы'}
                   {section === 'contact' && 'Контакты'}
