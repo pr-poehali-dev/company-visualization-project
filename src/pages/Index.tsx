@@ -110,8 +110,8 @@ const Index = () => {
           zIndex: 0
         }}
       />
-      <div className="fixed inset-0 bg-white/75" style={{ zIndex: 1 }} />
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/60 backdrop-blur-md border-b border-border">
+      <div className="fixed inset-0 bg-white/30" style={{ zIndex: 1 }} />
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <h1 className="text-2xl md:text-3xl font-bold text-primary">
