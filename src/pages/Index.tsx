@@ -110,8 +110,8 @@ const Index = () => {
           zIndex: 0
         }}
       />
-      <div className="fixed inset-0 bg-background/85 backdrop-blur-sm" style={{ zIndex: 1 }} />
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-lg border-b border-border">
+      <div className="fixed inset-0 bg-white/75" style={{ zIndex: 1 }} />
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/60 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <h1 className="text-2xl md:text-3xl font-bold text-primary">
@@ -241,7 +241,8 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="reviews" className="py-32 bg-muted/30 relative z-10">
+      <section id="reviews" className="py-32 relative z-10">
+        <div className="absolute inset-0 bg-white/40 -z-10" />
         <div className="container mx-auto px-4">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-bold mb-6">Отзывы</h2>
