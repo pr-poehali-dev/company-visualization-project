@@ -349,18 +349,19 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <div className="mt-16 space-y-6 text-center">
-              <div className="space-y-2">
-                <div className="text-sm text-muted-foreground">Телефон</div>
-                <div className="text-lg">+7 (999) 123-45-67</div>
-              </div>
-              <div className="space-y-2">
-                <div className="text-sm text-muted-foreground">Email</div>
-                <div className="text-lg">info@decorpro.ru</div>
-              </div>
-              <div className="space-y-2">
-                <div className="text-sm text-muted-foreground">Адрес</div>
-                <div className="text-lg">Москва, ул. Примерная, 1</div>
+            <div className="mt-16 space-y-8 text-center">
+              <div>
+                <div className="text-sm text-muted-foreground mb-4">Менеджеры проекта</div>
+                <div className="space-y-3">
+                  <div>
+                    <div className="font-semibold">Наталья</div>
+                    <a href="tel:+79219224400" className="text-lg text-primary hover:underline">+7 (921) 922-44-00</a>
+                  </div>
+                  <div>
+                    <div className="font-semibold">Мария</div>
+                    <a href="tel:+79313573080" className="text-lg text-primary hover:underline">+7 (931) 357-30-80</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
