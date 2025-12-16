@@ -102,8 +102,15 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+    <div className="min-h-screen bg-background relative">
+      <div 
+        className="fixed inset-0 opacity-5 pointer-events-none bg-cover bg-center bg-no-repeat"
+        style={{ 
+          backgroundImage: 'url(https://cdn.poehali.dev/files/Screenshot_20251211-132553_Chrome.jpg)',
+          zIndex: 0
+        }}
+      />
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-lg border-b border-border">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <h1 className="text-2xl md:text-3xl font-bold text-primary">
@@ -134,7 +141,7 @@ const Index = () => {
         </div>
       </nav>
 
-      <section id="home" className="relative min-h-screen flex items-center pt-20">
+      <section id="home" className="relative min-h-screen flex items-center pt-20 z-10">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <h2 className="text-6xl md:text-8xl font-bold leading-tight text-foreground">
@@ -156,7 +163,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="services" className="py-32">
+      <section id="services" className="py-32 relative z-10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-bold mb-6">Услуги</h2>
@@ -182,7 +189,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="about" className="py-32">
+      <section id="about" className="py-32 relative z-10">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-8">
             <h2 className="text-5xl md:text-6xl font-bold mb-6">О компании</h2>
@@ -212,7 +219,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="price" className="py-32">
+      <section id="price" className="py-32 relative z-10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-bold mb-6">Прайс</h2>
@@ -233,7 +240,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="reviews" className="py-32 bg-muted/30">
+      <section id="reviews" className="py-32 bg-muted/30 relative z-10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-bold mb-6">Отзывы</h2>
@@ -256,7 +263,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="contact" className="py-32">
+      <section id="contact" className="py-32 relative z-10">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-16">
@@ -368,7 +375,7 @@ const Index = () => {
         </div>
       </section>
 
-      <footer className="border-t py-16">
+      <footer className="border-t py-16 relative z-10">
         <div className="container mx-auto px-4">
           <div className="text-center space-y-4">
             <h3 className="text-2xl font-bold text-primary">
